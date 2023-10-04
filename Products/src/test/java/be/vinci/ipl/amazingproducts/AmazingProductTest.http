@@ -1,0 +1,16 @@
+### Create one
+POST http://localhost:9001/products
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "Produit 1",
+  "category": "B",
+  "price": 10.1
+}
+
+### Read all
+GET http://localhost:9001/products
+
+### Delete one
+DELETE http://localhost:9001/products/1
