@@ -29,4 +29,8 @@ public class ProductsService {
         repository.deleteById(id);
         return true;
     }
+
+    public Product readOne(int id) {
+        return repository.findById(id).orElse(null);
+    }
 }

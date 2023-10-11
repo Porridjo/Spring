@@ -6,14 +6,20 @@ import org.springframework.stereotype.Service;
 public class WishlistService {
 
   private final WishlistsRepository repository;
+  private final ProductsProxy productsProxy;
 
-  public WishlistService(WishlistsRepository repository) {
+  public WishlistService(WishlistsRepository repository, ProductsProxy productsProxy) {
     this.repository = repository;
+    this.productsProxy = productsProxy;
   }
 
 
-  public void updateOne(Wishlist newWishlist) {
+  public boolean updateOne(Wishlist newWishlist) {
+    Product product = productsProxy.readOne(newWishlist.getProductId());
+    if (product == null) return false;
+
     repository.save(newWishlist);
+    return true;
   }
 
 
