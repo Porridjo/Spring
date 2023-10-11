@@ -8,15 +8,21 @@ public class WishlistService {
   private final WishlistsRepository repository;
   private final ProductsProxy productsProxy;
 
-  public WishlistService(WishlistsRepository repository, ProductsProxy productsProxy) {
+  private final UsersProxy usersProxy;
+
+  public WishlistService(WishlistsRepository repository, ProductsProxy productsProxy, UsersProxy usersProxy) {
     this.repository = repository;
     this.productsProxy = productsProxy;
+    this.usersProxy = usersProxy;
   }
 
 
   public boolean updateOne(Wishlist newWishlist) {
     Product product = productsProxy.readOne(newWishlist.getProductId());
     if (product == null) return false;
+
+    User user = usersProxy.readOne(newWishlist.getPseudo());
+    if (user == null) return false;
 
     repository.save(newWishlist);
     return true;

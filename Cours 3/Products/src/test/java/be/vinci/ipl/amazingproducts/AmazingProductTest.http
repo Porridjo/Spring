@@ -12,5 +12,8 @@ Content-Type: application/json
 ### Read all
 GET http://localhost:9001/products
 
+### Read One
+GET http://localhost:9001/products/5
+
 ### Delete one
 DELETE http://localhost:9001/products/1

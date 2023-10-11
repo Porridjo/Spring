@@ -1,21 +1,21 @@
 ### Add product to wishlist of a user
-PUT http://localhost:9003/wishlists/david/3
+PUT http://localhost:9003/wishlists/Cat4Life/3
 Content-Type: application/json
 
 {
   "id": 5,
-  "pseudo": "david",
+  "pseudo": "Cat4Life",
   "productId": 3
 }
 
 ### Delete product from a user's wishlist
-DELETE http://localhost:9003/wishlists/david/2
+DELETE http://localhost:9003/wishlists/Cat4Life/2
 
 ### Read the wishlist of a user
-GET http://localhost:9003/wishlists/user/david
+GET http://localhost:9003/wishlists/user/Cat4Life
 
 ### Delete a user's wishlist
-DELETE http://localhost:9003/wishlists/user/david
+DELETE http://localhost:9003/wishlists/user/Cat4Life
 
 ### Delete a product from all wishlists
 DELETE http://localhost:9003/product/1
