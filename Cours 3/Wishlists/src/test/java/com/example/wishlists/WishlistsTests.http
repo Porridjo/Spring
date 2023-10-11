@@ -1,0 +1,21 @@
+### Create wishlist
+POST http://localhost:9003/wishlists/david/3
+Content-Type: application/json
+
+{
+  "id": 5,
+  "pseudo": "david",
+  "productId": 3
+}
+
+### Delete product from a user's wishlist
+DELETE http://localhost:9003/wishlists/david/2
+
+### Read the wishlist of a user
+GET http://localhost:9003/wishlists/user/david
+
+### Delete a user's wishlist
+DELETE http://localhost:9003/wishlists/user/david
+
+### Delete a product from all wishlists
+DELETE http://localhost:9003/product/1
