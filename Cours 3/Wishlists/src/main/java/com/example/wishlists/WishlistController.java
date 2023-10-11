@@ -29,10 +29,9 @@ public class WishlistController {
     }
     if (wishlist.invalid()) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 
-    boolean updated = service.updateOne(wishlist);
+    service.updateOne(wishlist);
 
-    if (!updated) return new ResponseEntity<>(HttpStatus.CONFLICT);
-    else return new ResponseEntity<>(HttpStatus.OK);
+    return new ResponseEntity<>(HttpStatus.OK);
   }
 
   @DeleteMapping("/wishlists/{pseudo}/{productId}")

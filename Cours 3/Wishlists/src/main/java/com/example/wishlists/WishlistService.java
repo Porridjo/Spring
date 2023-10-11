@@ -12,11 +12,8 @@ public class WishlistService {
   }
 
 
-  public boolean updateOne(Wishlist newWishlist) {
-    if (repository.existsByPseudoAndProductId(newWishlist.getPseudo(), newWishlist.getProductId())) return false;
-
+  public void updateOne(Wishlist newWishlist) {
     repository.save(newWishlist);
-    return true;
   }
 
 
@@ -24,7 +21,7 @@ public class WishlistService {
     boolean exists = repository.existsByPseudoAndProductId(pseudo, productId);
 
     if (!exists) return false;
-    repository.deleteByPseudoAndId(pseudo, productId);
+    repository.deleteByPseudoAndProductId(pseudo, productId);
     return true;
   }
 

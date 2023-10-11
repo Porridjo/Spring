@@ -11,7 +11,7 @@ public interface WishlistsRepository extends CrudRepository<Wishlist, Integer> {
   boolean existsByPseudoAndProductId(String pseudo, int productId);
 
   @Transactional
-  void deleteByPseudoAndId(String pseudo, int id);
+  void deleteByPseudoAndProductId(String pseudo, int productId);
 
   Iterable<Wishlist> findByPseudo(String pseudo);
 
