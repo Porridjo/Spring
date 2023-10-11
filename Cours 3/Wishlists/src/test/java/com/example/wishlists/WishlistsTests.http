@@ -1,5 +1,5 @@
-### Create wishlist
-POST http://localhost:9003/wishlists/david/3
+### Add product to wishlist of a user
+PUT http://localhost:9003/wishlists/david/3
 Content-Type: application/json
 
 {

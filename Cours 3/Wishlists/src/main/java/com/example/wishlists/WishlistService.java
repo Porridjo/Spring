@@ -13,10 +13,8 @@ public class WishlistService {
 
 
   public boolean updateOne(Wishlist newWishlist) {
-    Wishlist oldWishList = repository.findByPseudoAndId(newWishlist.getPseudo(), newWishlist.getId()).orElse(null);
-    if (oldWishList == null) return false;
+    if (repository.existsByPseudoAndProductId(newWishlist.getPseudo(), newWishlist.getProductId())) return false;
 
-    newWishlist.setId(oldWishList.getId());
     repository.save(newWishlist);
     return true;
   }

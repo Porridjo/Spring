@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface WishlistsRepository extends CrudRepository<Wishlist, Integer> {
 
   boolean existsByPseudoAndProductId(String pseudo, int productId);
-  Optional<Wishlist> findByPseudoAndId(String pseudo, int id);
 
   @Transactional
   void deleteByPseudoAndId(String pseudo, int id);

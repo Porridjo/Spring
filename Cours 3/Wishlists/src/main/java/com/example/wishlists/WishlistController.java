@@ -31,7 +31,7 @@ public class WishlistController {
 
     boolean updated = service.updateOne(wishlist);
 
-    if (!updated) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    if (!updated) return new ResponseEntity<>(HttpStatus.CONFLICT);
     else return new ResponseEntity<>(HttpStatus.OK);
   }
 
