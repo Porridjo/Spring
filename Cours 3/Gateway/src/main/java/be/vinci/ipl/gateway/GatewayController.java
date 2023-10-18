@@ -3,6 +3,7 @@ package be.vinci.ipl.gateway;
 import be.vinci.ipl.gateway.exceptions.BadRequestException;
 import be.vinci.ipl.gateway.exceptions.ConflictException;
 import be.vinci.ipl.gateway.exceptions.NotFoundException;
+import be.vinci.ipl.gateway.models.Credentials;
 import be.vinci.ipl.gateway.models.UserWithCredentials;
 import java.util.Objects;
 
@@ -46,6 +47,18 @@ public class GatewayController {
     boolean found = service.deleteUser(pseudo);
     if (!found) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     else return new ResponseEntity<>(HttpStatus.OK);
+  }
+
+  @PostMapping("/authentication/connect")
+  public ResponseEntity<String> connect(@RequestBody Credentials credentials) {
+    try {
+      String token = service.connect(credentials);
+      return new ResponseEntity<>(token, HttpStatus.OK);
+    } catch (BadRequestException e) {
+      return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    } catch (NotFoundException e) {
+      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
   }
 
   @PostMapping("/wishlists/{pseudo}/{productId}")

@@ -10,3 +10,6 @@ Content-Type: application/json
 
 ### Delete user
 DELETE http://localhost:8080/users/jean
+
+### Create wishlist
+PUT http://localhost:8080/wishlists/jean/1

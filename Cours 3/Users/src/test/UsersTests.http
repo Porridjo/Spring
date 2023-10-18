@@ -9,7 +9,7 @@ Content-Type: application/json
 }
 
 ### Read user
-GET http://localhost:9002/users/PetWard
+GET http://localhost:9002/users/jean
 
 ### Update user
 PUT http://localhost:9002/users/PetWard

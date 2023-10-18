@@ -7,6 +7,7 @@ import be.vinci.ipl.gateway.data.WishlistsProxy;
 import be.vinci.ipl.gateway.exceptions.BadRequestException;
 import be.vinci.ipl.gateway.exceptions.ConflictException;
 import be.vinci.ipl.gateway.exceptions.NotFoundException;
+import be.vinci.ipl.gateway.models.Credentials;
 import be.vinci.ipl.gateway.models.Product;
 import be.vinci.ipl.gateway.models.UserWithCredentials;
 import be.vinci.ipl.gateway.models.Wishlist;
@@ -91,5 +92,16 @@ public class GatewayService {
       else if (e.status() == 404) throw new NotFoundException();
       else throw e;
     }
+  }
+
+  public String connect(Credentials credentials) throws BadRequestException, NotFoundException {
+    try {
+      return authenticationProxy.connect(credentials);
+    } catch (FeignException e) {
+      if (e.status() == 400) throw new BadRequestException();
+      else if (e.status() == 404) throw new NotFoundException();
+      else throw e;
+    }
+
   }
 }
