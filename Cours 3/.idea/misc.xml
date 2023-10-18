@@ -9,6 +9,8 @@
         <option value="$PROJECT_DIR$/Users/pom.xml" />
         <option value="$PROJECT_DIR$/Wishlists/pom.xml" />
         <option value="$PROJECT_DIR$/Products/pom.xml" />
+        <option value="$PROJECT_DIR$/Authentification/pom.xml" />
+        <option value="$PROJECT_DIR$/Authentication/pom.xml" />
       </list>
     </option>
   </component>
