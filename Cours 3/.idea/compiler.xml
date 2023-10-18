@@ -8,8 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Products" />
-        <module name="Authentication" />
         <module name="Gateway" />
+        <module name="Authentication" />
         <module name="Users" />
         <module name="Wishlists" />
         <module name="Eureka" />

@@ -1,0 +1,12 @@
+### Create user
+POST http://localhost:8080/users/jean
+Content-Type: application/json
+
+{
+  "pseudo": "jean",
+  "firstname": "jean",
+  "lastname": "dupont"
+}
+
+### Delete user
+DELETE http://localhost:8080/users/jean
