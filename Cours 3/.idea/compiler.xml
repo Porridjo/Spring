@@ -8,11 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Products" />
+        <module name="Authentication" />
+        <module name="Gateway" />
         <module name="Users" />
         <module name="Wishlists" />
         <module name="Eureka" />
         <module name="users" />
-        <module name="Authentication" />
       </profile>
     </annotationProcessing>
   </component>
@@ -20,6 +21,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Authentication" options="-parameters" />
       <module name="Eureka" options="-parameters" />
+      <module name="Gateway" options="-parameters" />
       <module name="Products" options="-parameters" />
       <module name="Users" options="-parameters" />
       <module name="Wishlists" options="-parameters" />

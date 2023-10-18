@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/Products/pom.xml" />
         <option value="$PROJECT_DIR$/Authentification/pom.xml" />
         <option value="$PROJECT_DIR$/Authentication/pom.xml" />
+        <option value="$PROJECT_DIR$/Gateway/pom.xml" />
       </list>
     </option>
   </component>
