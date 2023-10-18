@@ -22,7 +22,7 @@ public class WishlistController {
   }
 
 
-  @PostMapping("/wishlists/{pseudo}/{productId}")
+  @PutMapping("/wishlists/{pseudo}/{productId}")
   public ResponseEntity<Void> updateOne(@PathVariable String pseudo, @PathVariable int productId,
       @RequestBody Wishlist wishlist) {
     if (!pseudo.equals(wishlist.getPseudo()) || productId != wishlist.getProductId()) {
